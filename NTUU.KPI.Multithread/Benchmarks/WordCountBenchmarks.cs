@@ -34,10 +34,6 @@ public class WordCountBenchmarks()
     public async Task<long> ParallelForEachAsync()
         => await _wordCountService.CountWordsParallelForEachAsync(_rootPath, ThreadCount);
 
-    [Benchmark]
-    public async Task<long> ParallelWhenAllAsync()
-        => await _wordCountService.CountWordsWhenAllAsync(_rootPath);
-
     [GlobalCleanup]
     public async Task Cleanup()
     {

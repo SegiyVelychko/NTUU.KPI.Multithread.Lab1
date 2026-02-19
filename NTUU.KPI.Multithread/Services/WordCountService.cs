@@ -64,21 +64,6 @@ internal sealed class WordCountService : IWordCountService
         return total;
     }
 
-    public async Task<long> CountWordsWhenAllAsync(string rootDirectory)
-    {
-        var files = Directory.GetFiles(rootDirectory, "*", SearchOption.AllDirectories);
-
-        var tasks = files.Select(async file =>
-        {
-            var text = await File.ReadAllTextAsync(file);
-            return CountWords(text);
-        });
-
-        var results = await Task.WhenAll(tasks);
-
-        return results.Sum();
-    }
-
     private static long CountWords(string text)
         => WordRegex.Count(text);
 }
