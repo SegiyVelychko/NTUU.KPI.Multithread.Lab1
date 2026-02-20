@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>NTUU.KPI.Multithread.Benchmarks.MatrixTransposeBenchmarks-20260220-012938</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.15.8, Windows 11 (10.0.26100.7840/24H2/2024Update/HudsonValley)
+13th Gen Intel Core i7-13650HX 2.60GHz, 1 CPU, 20 logical and 14 physical cores
+.NET SDK 10.0.103
+  [Host]    : .NET 10.0.3 (10.0.3, 10.0.326.7603), X64 RyuJIT x86-64-v3
+  .NET 10.0 : .NET 10.0.3 (10.0.3, 10.0.326.7603), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code>Job=.NET 10.0  Runtime=.NET 10.0  
+</code></pre>
+
+<table>
+<thead><tr><th>Method   </th><th>ThreadCount</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Gen0</th><th>Gen1</th><th>Gen2</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>Sequential</td><td>1</td><td>415.91 ms</td><td>5.831 ms</td><td>4.552 ms</td><td>1.00</td><td>0.01</td><td>-</td><td>-</td><td>-</td><td>381.47 MB</td><td>1.00</td>
+</tr><tr><td>ParallelBlocked</td><td>1</td><td>167.35 ms</td><td>5.087 ms</td><td>14.678 ms</td><td>0.40</td><td>0.04</td><td>-</td><td>-</td><td>-</td><td>381.47 MB</td><td>1.00</td>
+</tr><tr><td>Sequential</td><td>2</td><td>418.92 ms</td><td>6.212 ms</td><td>5.811 ms</td><td>1.00</td><td>0.02</td><td>-</td><td>-</td><td>-</td><td>381.47 MB</td><td>1.00</td>
+</tr><tr><td>ParallelBlocked</td><td>2</td><td>109.84 ms</td><td>2.193 ms</td><td>5.038 ms</td><td>0.26</td><td>0.01</td><td>200.0000</td><td>200.0000</td><td>200.0000</td><td>381.47 MB</td><td>1.00</td>
+</tr><tr><td>Sequential</td><td>4</td><td>417.03 ms</td><td>7.070 ms</td><td>6.613 ms</td><td>1.00</td><td>0.02</td><td>-</td><td>-</td><td>-</td><td>381.47 MB</td><td>1.00</td>
+</tr><tr><td>ParallelBlocked</td><td>4</td><td>77.36 ms</td><td>1.545 ms</td><td>3.190 ms</td><td>0.19</td><td>0.01</td><td>285.7143</td><td>285.7143</td><td>285.7143</td><td>381.47 MB</td><td>1.00</td>
+</tr><tr><td>Sequential</td><td>8</td><td>417.71 ms</td><td>8.131 ms</td><td>7.605 ms</td><td>1.00</td><td>0.02</td><td>-</td><td>-</td><td>-</td><td>381.47 MB</td><td>1.00</td>
+</tr><tr><td>ParallelBlocked</td><td>8</td><td>65.05 ms</td><td>1.256 ms</td><td>1.589 ms</td><td>0.16</td><td>0.00</td><td>250.0000</td><td>250.0000</td><td>250.0000</td><td>381.47 MB</td><td>1.00</td>
+</tr><tr><td>Sequential</td><td>16</td><td>437.46 ms</td><td>8.432 ms</td><td>10.038 ms</td><td>1.00</td><td>0.03</td><td>-</td><td>-</td><td>-</td><td>381.47 MB</td><td>1.00</td>
+</tr><tr><td>ParallelBlocked</td><td>16</td><td>62.01 ms</td><td>0.963 ms</td><td>0.854 ms</td><td>0.14</td><td>0.00</td><td>222.2222</td><td>222.2222</td><td>222.2222</td><td>381.47 MB</td><td>1.00</td>
+</tr><tr><td>Sequential</td><td>32</td><td>427.19 ms</td><td>8.439 ms</td><td>10.974 ms</td><td>1.00</td><td>0.04</td><td>-</td><td>-</td><td>-</td><td>381.47 MB</td><td>1.00</td>
+</tr><tr><td>ParallelBlocked</td><td>32</td><td>59.25 ms</td><td>1.172 ms</td><td>1.039 ms</td><td>0.14</td><td>0.00</td><td>222.2222</td><td>222.2222</td><td>222.2222</td><td>381.48 MB</td><td>1.00</td>
+</tr></tbody></table>
+</body>
+</html>

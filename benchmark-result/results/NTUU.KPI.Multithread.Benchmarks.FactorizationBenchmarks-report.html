@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>NTUU.KPI.Multithread.Benchmarks.FactorizationBenchmarks-20260220-011946</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.15.8, Windows 11 (10.0.26100.7840/24H2/2024Update/HudsonValley)
+13th Gen Intel Core i7-13650HX 2.60GHz, 1 CPU, 20 logical and 14 physical cores
+.NET SDK 10.0.103
+  [Host]     : .NET 10.0.3 (10.0.3, 10.0.326.7603), X64 RyuJIT x86-64-v3
+  DefaultJob : .NET 10.0.3 (10.0.3, 10.0.326.7603), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>ThreadCount</th><th>Number </th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Gen0</th><th>Gen1</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>Sequential</td><td>1</td><td>105327569</td><td>7.529 &mu;s</td><td>0.0980 &mu;s</td><td>0.0869 &mu;s</td><td>1.00</td><td>0.02</td><td>0.0229</td><td>-</td><td>296 B</td><td>1.00</td>
+</tr><tr><td>Parallel</td><td>1</td><td>105327569</td><td>7.841 &mu;s</td><td>0.0707 &mu;s</td><td>0.0662 &mu;s</td><td>1.04</td><td>0.01</td><td>0.0610</td><td>0.0458</td><td>944 B</td><td>3.19</td>
+</tr><tr><td>Sequential</td><td>1</td><td>1000000000039</td><td>693.581 &mu;s</td><td>3.3945 &mu;s</td><td>3.1752 &mu;s</td><td>1.00</td><td>0.01</td><td>-</td><td>-</td><td>288 B</td><td>1.00</td>
+</tr><tr><td>Parallel</td><td>1</td><td>1000000000039</td><td>697.489 &mu;s</td><td>3.6972 &mu;s</td><td>3.2775 &mu;s</td><td>1.01</td><td>0.01</td><td>-</td><td>-</td><td>832 B</td><td>2.89</td>
+</tr><tr><td>Sequential</td><td>1</td><td>2999999999971</td><td>697.793 &mu;s</td><td>1.8987 &mu;s</td><td>1.6831 &mu;s</td><td>1.00</td><td>0.00</td><td>-</td><td>-</td><td>312 B</td><td>1.00</td>
+</tr><tr><td>Parallel</td><td>1</td><td>2999999999971</td><td>697.707 &mu;s</td><td>1.2679 &mu;s</td><td>1.1860 &mu;s</td><td>1.00</td><td>0.00</td><td>-</td><td>-</td><td>1168 B</td><td>3.74</td>
+</tr><tr><td>Sequential</td><td>2</td><td>105327569</td><td>7.264 &mu;s</td><td>0.0181 &mu;s</td><td>0.0160 &mu;s</td><td>1.00</td><td>0.00</td><td>0.0229</td><td>-</td><td>296 B</td><td>1.00</td>
+</tr><tr><td>Parallel</td><td>2</td><td>105327569</td><td>10.677 &mu;s</td><td>0.0368 &mu;s</td><td>0.0327 &mu;s</td><td>1.47</td><td>0.01</td><td>0.1373</td><td>0.1221</td><td>1871 B</td><td>6.32</td>
+</tr><tr><td>Sequential</td><td>2</td><td>1000000000039</td><td>689.875 &mu;s</td><td>2.9218 &mu;s</td><td>2.5901 &mu;s</td><td>1.00</td><td>0.01</td><td>-</td><td>-</td><td>288 B</td><td>1.00</td>
+</tr><tr><td>Parallel</td><td>2</td><td>1000000000039</td><td>695.099 &mu;s</td><td>9.9809 &mu;s</td><td>8.3345 &mu;s</td><td>1.01</td><td>0.01</td><td>-</td><td>-</td><td>832 B</td><td>2.89</td>
+</tr><tr><td>Sequential</td><td>2</td><td>2999999999971</td><td>707.829 &mu;s</td><td>2.9483 &mu;s</td><td>2.6136 &mu;s</td><td>1.00</td><td>0.01</td><td>-</td><td>-</td><td>312 B</td><td>1.00</td>
+</tr><tr><td>Parallel</td><td>2</td><td>2999999999971</td><td>790.779 &mu;s</td><td>14.5483 &mu;s</td><td>12.8967 &mu;s</td><td>1.12</td><td>0.02</td><td>-</td><td>-</td><td>2113 B</td><td>6.77</td>
+</tr><tr><td>Sequential</td><td>4</td><td>105327569</td><td>7.357 &mu;s</td><td>0.0225 &mu;s</td><td>0.0200 &mu;s</td><td>1.00</td><td>0.00</td><td>0.0229</td><td>-</td><td>296 B</td><td>1.00</td>
+</tr><tr><td>Parallel</td><td>4</td><td>105327569</td><td>9.951 &mu;s</td><td>0.0613 &mu;s</td><td>0.0543 &mu;s</td><td>1.35</td><td>0.01</td><td>0.1373</td><td>0.1221</td><td>1869 B</td><td>6.31</td>
+</tr><tr><td>Sequential</td><td>4</td><td>1000000000039</td><td>696.485 &mu;s</td><td>1.6595 &mu;s</td><td>1.4711 &mu;s</td><td>1.00</td><td>0.00</td><td>-</td><td>-</td><td>288 B</td><td>1.00</td>
+</tr><tr><td>Parallel</td><td>4</td><td>1000000000039</td><td>700.707 &mu;s</td><td>3.8335 &mu;s</td><td>3.5859 &mu;s</td><td>1.01</td><td>0.01</td><td>-</td><td>-</td><td>832 B</td><td>2.89</td>
+</tr><tr><td>Sequential</td><td>4</td><td>2999999999971</td><td>705.643 &mu;s</td><td>1.2730 &mu;s</td><td>1.1908 &mu;s</td><td>1.00</td><td>0.00</td><td>-</td><td>-</td><td>312 B</td><td>1.00</td>
+</tr><tr><td>Parallel</td><td>4</td><td>2999999999971</td><td>780.441 &mu;s</td><td>11.6484 &mu;s</td><td>10.8959 &mu;s</td><td>1.11</td><td>0.02</td><td>-</td><td>-</td><td>2716 B</td><td>8.71</td>
+</tr><tr><td>Sequential</td><td>8</td><td>105327569</td><td>7.353 &mu;s</td><td>0.0158 &mu;s</td><td>0.0147 &mu;s</td><td>1.00</td><td>0.00</td><td>0.0229</td><td>-</td><td>296 B</td><td>1.00</td>
+</tr><tr><td>Parallel</td><td>8</td><td>105327569</td><td>10.093 &mu;s</td><td>0.0881 &mu;s</td><td>0.0824 &mu;s</td><td>1.37</td><td>0.01</td><td>0.1373</td><td>0.1221</td><td>1869 B</td><td>6.31</td>
+</tr><tr><td>Sequential</td><td>8</td><td>1000000000039</td><td>696.892 &mu;s</td><td>2.0798 &mu;s</td><td>1.8437 &mu;s</td><td>1.00</td><td>0.00</td><td>-</td><td>-</td><td>288 B</td><td>1.00</td>
+</tr><tr><td>Parallel</td><td>8</td><td>1000000000039</td><td>697.119 &mu;s</td><td>1.8329 &mu;s</td><td>1.7145 &mu;s</td><td>1.00</td><td>0.00</td><td>-</td><td>-</td><td>832 B</td><td>2.89</td>
+</tr><tr><td>Sequential</td><td>8</td><td>2999999999971</td><td>701.649 &mu;s</td><td>4.6429 &mu;s</td><td>4.1158 &mu;s</td><td>1.00</td><td>0.01</td><td>-</td><td>-</td><td>312 B</td><td>1.00</td>
+</tr><tr><td>Parallel</td><td>8</td><td>2999999999971</td><td>764.930 &mu;s</td><td>12.2785 &mu;s</td><td>11.4853 &mu;s</td><td>1.09</td><td>0.02</td><td>-</td><td>-</td><td>3200 B</td><td>10.26</td>
+</tr><tr><td>Sequential</td><td>16</td><td>105327569</td><td>7.293 &mu;s</td><td>0.0247 &mu;s</td><td>0.0231 &mu;s</td><td>1.00</td><td>0.00</td><td>0.0229</td><td>-</td><td>296 B</td><td>1.00</td>
+</tr><tr><td>Parallel</td><td>16</td><td>105327569</td><td>10.121 &mu;s</td><td>0.0863 &mu;s</td><td>0.0765 &mu;s</td><td>1.39</td><td>0.01</td><td>0.1373</td><td>0.1221</td><td>1868 B</td><td>6.31</td>
+</tr><tr><td>Sequential</td><td>16</td><td>1000000000039</td><td>694.648 &mu;s</td><td>1.7955 &mu;s</td><td>1.6795 &mu;s</td><td>1.00</td><td>0.00</td><td>-</td><td>-</td><td>288 B</td><td>1.00</td>
+</tr><tr><td>Parallel</td><td>16</td><td>1000000000039</td><td>694.161 &mu;s</td><td>2.8407 &mu;s</td><td>2.5182 &mu;s</td><td>1.00</td><td>0.00</td><td>-</td><td>-</td><td>832 B</td><td>2.89</td>
+</tr><tr><td>Sequential</td><td>16</td><td>2999999999971</td><td>704.318 &mu;s</td><td>2.1108 &mu;s</td><td>1.9745 &mu;s</td><td>1.00</td><td>0.00</td><td>-</td><td>-</td><td>312 B</td><td>1.00</td>
+</tr><tr><td>Parallel</td><td>16</td><td>2999999999971</td><td>817.456 &mu;s</td><td>8.0029 &mu;s</td><td>6.6828 &mu;s</td><td>1.16</td><td>0.01</td><td>-</td><td>-</td><td>3115 B</td><td>9.98</td>
+</tr></tbody></table>
+</body>
+</html>

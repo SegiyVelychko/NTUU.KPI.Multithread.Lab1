@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>NTUU.KPI.Multithread.Benchmarks.WordCountBenchmarks-20260220-015346</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.15.8, Windows 11 (10.0.26100.7840/24H2/2024Update/HudsonValley)
+13th Gen Intel Core i7-13650HX 2.60GHz, 1 CPU, 20 logical and 14 physical cores
+.NET SDK 10.0.103
+  [Host]     : .NET 10.0.3 (10.0.3, 10.0.326.7603), X64 RyuJIT x86-64-v3
+  DefaultJob : .NET 10.0.3 (10.0.3, 10.0.326.7603), X64 RyuJIT x86-64-v3
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method          </th><th>ThreadCount</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Gen0</th><th>Gen1</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>SequentialAsync</td><td>1</td><td>167.07 ms</td><td>3.662 ms</td><td>10.209 ms</td><td>1.00</td><td>0.08</td><td>1000.0000</td><td>500.0000</td><td>15.92 MB</td><td>1.00</td>
+</tr><tr><td>ParallelSemaphoreAsync</td><td>1</td><td>178.81 ms</td><td>3.538 ms</td><td>6.470 ms</td><td>1.07</td><td>0.07</td><td>1000.0000</td><td>-</td><td>16.29 MB</td><td>1.02</td>
+</tr><tr><td>ParallelForEachAsync</td><td>1</td><td>166.66 ms</td><td>3.321 ms</td><td>7.631 ms</td><td>1.00</td><td>0.07</td><td>1000.0000</td><td>500.0000</td><td>16.13 MB</td><td>1.01</td>
+</tr><tr><td>SequentialAsync</td><td>2</td><td>165.18 ms</td><td>3.277 ms</td><td>7.261 ms</td><td>1.00</td><td>0.06</td><td>1000.0000</td><td>500.0000</td><td>15.91 MB</td><td>1.00</td>
+</tr><tr><td>ParallelSemaphoreAsync</td><td>2</td><td>122.93 ms</td><td>2.400 ms</td><td>2.568 ms</td><td>0.75</td><td>0.04</td><td>1500.0000</td><td>500.0000</td><td>16.59 MB</td><td>1.04</td>
+</tr><tr><td>ParallelForEachAsync</td><td>2</td><td>95.03 ms</td><td>1.131 ms</td><td>0.883 ms</td><td>0.58</td><td>0.03</td><td>1250.0000</td><td>500.0000</td><td>15.99 MB</td><td>1.00</td>
+</tr><tr><td>SequentialAsync</td><td>4</td><td>163.84 ms</td><td>3.269 ms</td><td>7.106 ms</td><td>1.00</td><td>0.06</td><td>1000.0000</td><td>500.0000</td><td>16.06 MB</td><td>1.00</td>
+</tr><tr><td>ParallelSemaphoreAsync</td><td>4</td><td>124.89 ms</td><td>2.493 ms</td><td>6.020 ms</td><td>0.76</td><td>0.05</td><td>1500.0000</td><td>750.0000</td><td>16.28 MB</td><td>1.01</td>
+</tr><tr><td>ParallelForEachAsync</td><td>4</td><td>70.67 ms</td><td>1.008 ms</td><td>0.787 ms</td><td>0.43</td><td>0.02</td><td>1500.0000</td><td>500.0000</td><td>16.48 MB</td><td>1.03</td>
+</tr><tr><td>SequentialAsync</td><td>8</td><td>163.33 ms</td><td>3.262 ms</td><td>7.363 ms</td><td>1.00</td><td>0.06</td><td>1000.0000</td><td>500.0000</td><td>16.09 MB</td><td>1.00</td>
+</tr><tr><td>ParallelSemaphoreAsync</td><td>8</td><td>125.25 ms</td><td>2.504 ms</td><td>3.899 ms</td><td>0.77</td><td>0.04</td><td>1500.0000</td><td>750.0000</td><td>16.33 MB</td><td>1.01</td>
+</tr><tr><td>ParallelForEachAsync</td><td>8</td><td>65.81 ms</td><td>1.314 ms</td><td>1.966 ms</td><td>0.40</td><td>0.02</td><td>1428.5714</td><td>428.5714</td><td>16.44 MB</td><td>1.02</td>
+</tr><tr><td>SequentialAsync</td><td>16</td><td>183.99 ms</td><td>3.645 ms</td><td>5.781 ms</td><td>1.00</td><td>0.04</td><td>1000.0000</td><td>500.0000</td><td>16.47 MB</td><td>1.00</td>
+</tr><tr><td>ParallelSemaphoreAsync</td><td>16</td><td>129.96 ms</td><td>2.458 ms</td><td>2.414 ms</td><td>0.71</td><td>0.03</td><td>1500.0000</td><td>750.0000</td><td>15.99 MB</td><td>0.97</td>
+</tr><tr><td>ParallelForEachAsync</td><td>16</td><td>42.04 ms</td><td>0.832 ms</td><td>2.087 ms</td><td>0.23</td><td>0.01</td><td>1545.4545</td><td>454.5455</td><td>16.3 MB</td><td>0.99</td>
+</tr><tr><td>SequentialAsync</td><td>32</td><td>161.84 ms</td><td>3.224 ms</td><td>6.134 ms</td><td>1.00</td><td>0.05</td><td>1000.0000</td><td>500.0000</td><td>15.95 MB</td><td>1.00</td>
+</tr><tr><td>ParallelSemaphoreAsync</td><td>32</td><td>133.38 ms</td><td>2.553 ms</td><td>3.135 ms</td><td>0.83</td><td>0.04</td><td>1500.0000</td><td>750.0000</td><td>16.32 MB</td><td>1.02</td>
+</tr><tr><td>ParallelForEachAsync</td><td>32</td><td>38.20 ms</td><td>0.758 ms</td><td>2.137 ms</td><td>0.24</td><td>0.02</td><td>1538.4615</td><td>538.4615</td><td>16.39 MB</td><td>1.03</td>
+</tr></tbody></table>
+</body>
+</html>
